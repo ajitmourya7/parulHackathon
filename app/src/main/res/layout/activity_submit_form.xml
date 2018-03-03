@@ -55,20 +55,14 @@
 
             </LinearLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <EditText
+                android:textColor="@android:color/black"
+                android:id="@+id/despform"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:textColor="@android:color/black"
-                    android:id="@+id/despform"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Description"
-                    android:inputType="text"
-                    />
-
-            </android.support.design.widget.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:inputType="text"
+                />
 
             <LinearLayout
                 android:gravity="center"

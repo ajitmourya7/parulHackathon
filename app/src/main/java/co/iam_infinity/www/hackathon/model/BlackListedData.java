@@ -9,15 +9,17 @@ public class BlackListedData {
     String desp;
     String name;
     String status;
+    String url;
 
     public BlackListedData() {
     }
 
-    public BlackListedData(String bizType, String desp, String name, String status) {
+    public BlackListedData(String bizType, String desp, String name, String status, String url) {
         this.bizType = bizType;
         this.desp = desp;
         this.name = name;
         this.status = status;
+        this.url = url;
     }
 
     public String getBizType() {
@@ -50,5 +52,13 @@ public class BlackListedData {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

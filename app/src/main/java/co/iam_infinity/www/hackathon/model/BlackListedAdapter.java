@@ -8,9 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import co.iam_infinity.www.hackathon.R;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Infinity on 02-03-2018.
@@ -37,6 +40,7 @@ public class BlackListedAdapter extends ArrayAdapter<BlackListedData> {
         TextView desp = (TextView)listViewItem.findViewById(R.id.desp);
         TextView name = (TextView) listViewItem.findViewById(R.id.name);
         TextView status = (TextView) listViewItem.findViewById(R.id.status);
+        CircleImageView url = (CircleImageView) listViewItem.findViewById(R.id.pic);
 
         BlackListedData dataInfo = infoList.get(position);
         type.setText(dataInfo.getBizType());
@@ -49,6 +53,8 @@ public class BlackListedAdapter extends ArrayAdapter<BlackListedData> {
         }else {
             status.setTextColor(context.getResources().getColor(R.color.green));
         }
+
+        Glide.with(context).load(dataInfo.getUrl()).into(url);
 
         return listViewItem;
     }
