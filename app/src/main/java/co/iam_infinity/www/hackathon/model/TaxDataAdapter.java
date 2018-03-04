@@ -48,7 +48,7 @@ public class TaxDataAdapter extends ArrayAdapter<TaxData> {
         year.setText(dataInfo.getYear());
         type.setText(dataInfo.getType());
         status.setText(dataInfo.getStatus());
-        amounttax.setText(dataInfo.getAmount());
+        amounttax.setText("₹ "+dataInfo.getAmount());
 
         if (dataInfo.getStatus().equals("paid")){
             status.setTextColor(context.getResources().getColor(R.color.green));
