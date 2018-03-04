@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 import co.iam_infinity.www.hackathon.R;
@@ -38,6 +40,7 @@ public class TaxDataAdapter extends ArrayAdapter<TaxData> {
         TextView year = (TextView) listViewItem.findViewById(R.id.yeartax);
         TextView status = (TextView) listViewItem.findViewById(R.id.statustax);
         TextView type = (TextView) listViewItem.findViewById(R.id.typetax);
+        TextView amounttax   = (TextView) listViewItem.findViewById(R.id.amounttax);
 
         TaxData dataInfo = infoList.get(position);
         name.setText(dataInfo.getName());
@@ -45,6 +48,7 @@ public class TaxDataAdapter extends ArrayAdapter<TaxData> {
         year.setText(dataInfo.getYear());
         type.setText(dataInfo.getType());
         status.setText(dataInfo.getStatus());
+        amounttax.setText(dataInfo.getAmount());
 
         if (dataInfo.getStatus().equals("paid")){
             status.setTextColor(context.getResources().getColor(R.color.green));

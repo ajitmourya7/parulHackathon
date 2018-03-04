@@ -10,16 +10,18 @@ public class TaxData {
     String year;
     String status;
     String type;
+    String amount;
 
     public TaxData() {
     }
 
-    public TaxData(String name, String uid, String year, String status, String type) {
+    public TaxData(String name, String uid, String year, String status, String type, String amount) {
         this.name = name;
         this.uid = uid;
         this.year = year;
         this.status = status;
         this.type = type;
+        this.amount = amount;
     }
 
     public String getName() {
@@ -60,5 +62,13 @@ public class TaxData {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
     }
 }

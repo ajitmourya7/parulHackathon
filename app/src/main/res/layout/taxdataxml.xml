@@ -78,6 +78,16 @@
                         android:textSize="18sp" />
 
                     <TextView
+                        android:text="amount"
+                        android:id="@+id/amounttax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="7dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
                         android:text="statustax"
                         android:id="@+id/statustax"
                         android:layout_width="match_parent"
