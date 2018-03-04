@@ -9,15 +9,17 @@ public class SubmitFormData {
     String lat;
     String log;
     String desp;
+    String address;
 
     public SubmitFormData() {
     }
 
-    public SubmitFormData(String pic, String lat, String log, String desp) {
+    public SubmitFormData(String pic, String lat, String log, String desp, String address) {
         this.pic = pic;
         this.lat = lat;
         this.log = log;
         this.desp = desp;
+        this.address = address;
     }
 
     public String getPic() {
@@ -50,5 +52,13 @@ public class SubmitFormData {
 
     public void setDesp(String desp) {
         this.desp = desp;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

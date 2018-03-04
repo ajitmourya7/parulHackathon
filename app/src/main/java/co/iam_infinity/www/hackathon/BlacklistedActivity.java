@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +27,7 @@ import java.util.List;
 
 import co.iam_infinity.www.hackathon.model.BlackListedAdapter;
 import co.iam_infinity.www.hackathon.model.BlackListedData;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class BlacklistedActivity extends AppCompatActivity {
 
@@ -51,16 +53,24 @@ public class BlacklistedActivity extends AppCompatActivity {
                 final View dialogView = inflater.inflate(R.layout.blacklisted_dialog, null);
                 dialogBuilder.setView(dialogView);
 
-                final ImageView imagebd = (ImageView)dialogView.findViewById(R.id.imagebd);
+                final CircleImageView imagebd = (CircleImageView)dialogView.findViewById(R.id.imagebd);
                 final TextView namebd = (TextView)dialogView.findViewById(R.id.namebd);
                 final TextView despbd = (TextView)dialogView.findViewById(R.id.despbd);
                 final TextView typebd = (TextView)dialogView.findViewById(R.id.typebd);
-                final TextView statusbd = (TextView)dialogView.findViewById(R.id.statusbd);
+                final Button statusbd = (Button) dialogView.findViewById(R.id.statusbd);
+
+                Glide.with(dialogView).load(blacklist.get(position).getUrl()).into(imagebd);
 
                 namebd.setText(blacklist.get(position).getName());
                 despbd.setText(blacklist.get(position).getDesp());
                 typebd.setText(blacklist.get(position).getBizType());
                 statusbd.setText(blacklist.get(position).getStatus());
+
+                if (blacklist.get(position).getStatus().equals("blacklisted")){
+                    statusbd.setBackgroundColor(dialogView.getResources().getColor(R.color.red));
+                }else{
+                    statusbd.setBackgroundColor(dialogView.getResources().getColor(R.color.green));
+                }
 
                 AlertDialog b = dialogBuilder.create();
                 b.show();

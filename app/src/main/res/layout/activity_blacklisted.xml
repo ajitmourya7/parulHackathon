@@ -8,13 +8,18 @@
     android:background="@android:color/darker_gray"
     tools:context="co.iam_infinity.www.hackathon.BlacklistedActivity">
 
-    <TextView
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:text="BlackListed"
+    <android.support.v7.widget.CardView
+        android:elevation="7dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="BlackListed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
 
     <ListView
         android:divider="@android:color/transparent"

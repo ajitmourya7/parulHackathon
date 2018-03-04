@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
@@ -43,13 +44,16 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 import co.iam_infinity.www.hackathon.model.SubmitFormData;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SubmitFormActivity extends AppCompatActivity {
 
-    ImageView imageView_pic;
-    EditText editText_despform;
+    CircleImageView imageView_pic;
+    EditText editText_despform,address;
     Button button_submit,myloc;
     Spinner mySpinner;
     private Uri filePath;
@@ -61,6 +65,7 @@ public class SubmitFormActivity extends AppCompatActivity {
 
     FirebaseStorage storage;
     StorageReference storageReference;
+    List<Address> addresses;
 
     String lngmain,latmain;
 
@@ -72,10 +77,11 @@ public class SubmitFormActivity extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
 
-        imageView_pic  = (ImageView)findViewById(R.id.picfill);
+        imageView_pic  = (CircleImageView)findViewById(R.id.picfill);
         editText_location = (TextView)findViewById(R.id.location);
         editText_despform = (EditText)findViewById(R.id.despform);
         myloc = (Button)findViewById(R.id.getloc);
+        address = (EditText)findViewById(R.id.address);
         button_submit = (Button)findViewById(R.id.submit);
         imageView_pic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +122,7 @@ public class SubmitFormActivity extends AppCompatActivity {
                                     progressDialog.dismiss();
                                     Toast.makeText(SubmitFormActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
                                     teamappData.setPic(taskSnapshot.getDownloadUrl().toString());
+                                    teamappData.setAddress(address.getText().toString().trim());
                                     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                                     DatabaseReference databaseReference = firebaseDatabase.getReference().child("development").child("report");
                                     databaseReference.push().setValue(teamappData).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -203,7 +210,15 @@ public class SubmitFormActivity extends AppCompatActivity {
                     double log = location.getLongitude();
                     LatLng latLng = new LatLng(lal,log);
                     //instantiate the class, Geocoder
-                    Geocoder geocoder = new Geocoder(getApplicationContext());
+                    Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+                    addresses = null;
+                    try{
+                        addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
+
+                    }catch (IOException ioException){
+
+                    }
+
                     editText_location.setText("Success");
                     latmain = String.valueOf(lal);
                     lngmain = String.valueOf(log);

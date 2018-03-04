@@ -8,21 +8,41 @@
 
     <!-- Data post Form for Team card-->
     <LinearLayout
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         >
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/picfill"
+        <RelativeLayout
+            android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:padding="10dp"
-            app:civ_border_color="@color/colorAccent"
-            app:civ_border_width="2dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"/>
+            android:gravity="center">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:padding="10dp"
+                app:civ_border_color="@color/colorAccent"
+                app:civ_border_width="2dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/picfill" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/picfill"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/picfill"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_imageadd" />
+        </RelativeLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,6 +81,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Description"
+                android:inputType="text"
+                />
+
+            <EditText
+                android:textColor="@android:color/black"
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
                 android:inputType="text"
                 />
 

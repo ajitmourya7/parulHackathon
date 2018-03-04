@@ -27,6 +27,7 @@
                 <TextView
                     android:layout_margin="7dp"
                     android:gravity="center"
+                    android:textColor="#455A64"
                     android:text="Nearby things.."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -40,7 +41,7 @@
                     android:layout_height="match_parent">
 
                     <android.support.v7.widget.CardView
-                        android:background="@color/blue"
+                        android:background="#1976D2"
                         android:id="@+id/dustbin"
                         android:layout_margin="7dp"
                         android:layout_weight="1"
@@ -49,12 +50,12 @@
                         android:layout_height="match_parent">
                         <android.support.v7.widget.LinearLayoutCompat
                             android:padding="7dp"
-                            android:background="@color/blue"
+                            android:background="#1976D2"
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <ImageView
-                                android:src="@drawable/icon"
+                                android:src="@drawable/dustnew"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
@@ -71,7 +72,7 @@
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/toilet"
-                        android:background="@color/blue"
+                        android:background="#2196F3"
                         android:layout_margin="7dp"
                         android:layout_weight="1"
                         app:cardCornerRadius="25dp"
@@ -79,19 +80,19 @@
                         android:layout_height="match_parent">
                         <android.support.v7.widget.LinearLayoutCompat
                             android:padding="7dp"
-                            android:background="@color/blue"
+                            android:background="#2196F3"
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <ImageView
-                                android:src="@drawable/icon"
+                                android:src="@drawable/toiletnew"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
                             <TextView
                                 android:textColor="@android:color/white"
                                 android:layout_marginLeft="5dp"
-                                android:text="Public Washroom nearby"
+                                android:text="Washroom nearby"
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"
                                 android:layout_width="wrap_content"
@@ -122,6 +123,7 @@
                     android:layout_margin="7dp"
                     android:gravity="center"
                     android:text="Local "
+                    android:textColor="#455A64"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
@@ -134,9 +136,10 @@
                     android:layout_height="match_parent">
 
                     <android.support.v7.widget.CardView
-                        android:background="#FFFFFF"
                         android:layout_margin="7dp"
                         android:layout_weight="1"
+                        android:elevation="7dp"
+                        android:background="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <android.support.v7.widget.LinearLayoutCompat
@@ -157,14 +160,14 @@
                                 android:id="@+id/blacklist"
                                 android:layout_width="wrap_content"
                                 android:layout_height="100dp"
-                                app:civ_fill_color="@color/black"
                                 app:civ_border_width="10dp"
+                                app:civ_border_color="#EF5350"
                                 android:src="@drawable/b1"/>
                             <TextView
                                 android:gravity="center"
                                 android:text="BlackListed"
                                 android:textSize="10dp"
-                                android:textColor="@color/black"
+                                android:textColor="#EF5350"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
                         </android.support.v7.widget.LinearLayoutCompat>
@@ -173,6 +176,8 @@
                     <android.support.v7.widget.CardView
                         android:layout_margin="7dp"
                         android:layout_weight="1"
+                        android:elevation="7dp"
+                        android:background="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <android.support.v7.widget.LinearLayoutCompat
@@ -184,14 +189,15 @@
                                 android:id="@+id/notibut"
                                 android:layout_width="wrap_content"
                                 android:layout_height="100dp"
-                                app:civ_fill_color="@color/black"
+                                app:civ_fill_color="#EC407A"
                                 app:civ_border_width="10dp"
+                                app:civ_border_color="#EC407A"
                                 android:src="@drawable/n"/>
                             <TextView
                                 android:gravity="center"
                                 android:text="Notification"
                                 android:textSize="10dp"
-                                android:textColor="@color/black"
+                                android:textColor="#EC407A"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
                             <!--<TextView
@@ -208,6 +214,8 @@
                     <android.support.v7.widget.CardView
                         android:layout_margin="7dp"
                         android:layout_weight="1"
+                        android:elevation="7dp"
+                        android:background="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <android.support.v7.widget.LinearLayoutCompat
@@ -219,14 +227,15 @@
                                 android:id="@+id/Tax"
                                 android:layout_width="wrap_content"
                                 android:layout_height="100dp"
-                                app:civ_fill_color="@color/black"
+                                app:civ_fill_color="#26A69A"
                                 app:civ_border_width="10dp"
+                                app:civ_border_color="#26A69A"
                                 android:src="@drawable/t"/>
                             <TextView
                                 android:gravity="center"
                                 android:text="Tax"
                                 android:textSize="10dp"
-                                android:textColor="@color/black"
+                                android:textColor="#26A69A"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
                             <!--<TextView
@@ -242,6 +251,8 @@
                     <android.support.v7.widget.CardView
                         android:layout_margin="7dp"
                         android:layout_weight="1"
+                        android:elevation="7dp"
+                        android:background="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <android.support.v7.widget.LinearLayoutCompat
@@ -253,14 +264,15 @@
                                 android:id="@+id/inbulid"
                                 android:layout_width="wrap_content"
                                 android:layout_height="100dp"
-                                app:civ_fill_color="@color/black"
+                                app:civ_fill_color="#FFCA28"
                                 app:civ_border_width="10dp"
-                                android:src="@drawable/b"/>
+                                app:civ_border_color="#FFCA28"
+                                android:src="@drawable/report"/>
                             <TextView
                                 android:gravity="center"
                                 android:text="Report"
                                 android:textSize="10dp"
-                                android:textColor="@color/black"
+                                android:textColor="#FFCA28"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
                             <!--<TextView
