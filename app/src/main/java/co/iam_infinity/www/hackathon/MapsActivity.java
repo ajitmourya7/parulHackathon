@@ -405,6 +405,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         pl = googleMap;
 
+        LatLng latLng = new LatLng(22.3071588,73.18121870000004);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,13));
+
         mMap.setOnPoiClickListener(this);
 
     }
