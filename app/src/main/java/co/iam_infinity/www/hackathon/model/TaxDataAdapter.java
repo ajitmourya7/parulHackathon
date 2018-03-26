@@ -37,24 +37,12 @@ public class TaxDataAdapter extends ArrayAdapter<TaxData> {
 
         TextView name = (TextView) listViewItem.findViewById(R.id.nametax);
         TextView uid = (TextView)listViewItem.findViewById(R.id.uidtax);
-        TextView year = (TextView) listViewItem.findViewById(R.id.yeartax);
         TextView status = (TextView) listViewItem.findViewById(R.id.statustax);
-        TextView type = (TextView) listViewItem.findViewById(R.id.typetax);
-        TextView amounttax   = (TextView) listViewItem.findViewById(R.id.amounttax);
 
         TaxData dataInfo = infoList.get(position);
         name.setText(dataInfo.getName());
         uid.setText(dataInfo.getUid());
-        year.setText(dataInfo.getYear());
-        type.setText(dataInfo.getType());
         status.setText(dataInfo.getStatus());
-        amounttax.setText("₹ "+dataInfo.getAmount());
-
-        if (dataInfo.getStatus().equals("paid")){
-            status.setTextColor(context.getResources().getColor(R.color.green));
-        }else {
-            status.setTextColor(context.getResources().getColor(R.color.red));
-        }
 
         return listViewItem;
     }

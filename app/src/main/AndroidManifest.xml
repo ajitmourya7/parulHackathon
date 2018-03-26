@@ -63,7 +63,8 @@
         <activity android:name=".BlacklistedActivity" />
         <activity android:name=".SubmitFormActivity" />
         <activity android:name=".AadharActivity" />
-        <activity android:name=".TaxActivity"></activity>
+        <activity android:name=".TaxActivity" />
+        <activity android:name=".model.TaxAllActivity"></activity>
     </application>
 
 </manifest>

@@ -233,7 +233,7 @@
                                 android:src="@drawable/t"/>
                             <TextView
                                 android:gravity="center"
-                                android:text="Tax"
+                                android:text="Request"
                                 android:textSize="10dp"
                                 android:textColor="#26A69A"
                                 android:layout_width="match_parent"

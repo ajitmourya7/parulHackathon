@@ -5,7 +5,7 @@ package co.iam_infinity.www.hackathon.model;
  */
 
 public class TaxData {
-    String name;
+    String data;
     String uid;
     String year;
     String status;
@@ -16,7 +16,7 @@ public class TaxData {
     }
 
     public TaxData(String name, String uid, String year, String status, String type, String amount) {
-        this.name = name;
+        this.data = name;
         this.uid = uid;
         this.year = year;
         this.status = status;
@@ -25,11 +25,11 @@ public class TaxData {
     }
 
     public String getName() {
-        return name;
+        return data;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.data = name;
     }
 
     public String getUid() {
